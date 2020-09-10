@@ -2,7 +2,6 @@
 set -u
 
 echo WORKDIR: $WORKDIR
-echo OUTDIR: $OUTDIR
 echo FUNCTION Nr: $FUNCTION
 
 # check APPLICATION name
@@ -23,11 +22,13 @@ esac
 echo Downloading input file
 swift download INPUT --prefix $JOB_UUID || exit 23
 
-export INPUTDIR=$WORKDIR/INPUT
+export INPUTDIR=$WORKDIR/INPUT/$JOB_UUID
 export OUTDIR=$WORKDIR/output
 
+mkdir -p $OUTDIR
+
 echo Running $APPLICATION
-python $APP_FILE $FUNCTION $OUTDIR/$JOB_UUID/$INPUT_FILENAME || exit 255
+python $APP_FILE $FUNCTION $INPUT_FILENAME || exit 255
 
 tar cfvz output.tar.gz $OUTDIR
 
