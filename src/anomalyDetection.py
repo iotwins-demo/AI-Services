@@ -425,7 +425,7 @@ def semisup_detection_inference(df_fname, model_name, sep=',',
 
 
 def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0', 
-        hparams_file_ae=None, hparams_file_classr=None, n_percentile=-1):
+        hparams_file_ae=None, hparams_file_classr=None):
     '''
     anomalyDetection.sup_autoencoder_classr::Creates a supervised model for
     anomaly detection composed by an unsupervised autoencoder (feature
@@ -549,7 +549,6 @@ def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0',
     model_fname, stats_file, scaler_file = _save_trained_model(
             model_name, classr_model, pred_stats, scaler)
     return model_fname, scaler_file, stats_file
-
 
 
 def sup_detection_inference(df_fname, model_name, sep=',', 
