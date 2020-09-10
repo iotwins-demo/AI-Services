@@ -18,7 +18,7 @@ import os.path
 import ast
 
 volume_dir = os.getenv('INPUTDIR', './')
-os.getenv('OUTDIR','{}/out/'.format(volume_dir))
+out_dir = os.getenv('OUTDIR','{}/out/'.format(volume_dir))
 
 def _get_categorical_continuous_features(df):
     categorical_features = []

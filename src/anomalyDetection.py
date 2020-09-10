@@ -21,7 +21,7 @@ import sys
 import joblib
 
 volume_dir = os.getenv('INPUTDIR', './')
-os.getenv('OUTDIR','{}/out/'.format(volume_dir))
+out_dir = os.getenv('OUTDIR','{}/out/'.format(volume_dir))
 
 '''
 anomalyDetection.default_hparams_semisup::Default parameters for the
