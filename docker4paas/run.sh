@@ -33,7 +33,7 @@ mkdir -p $OUTDIR
 echo Running $APPLICATION
 python $APP_FILE $FUNCTION $INPUT_FILENAME || exit 255
 
-tar cfvz output.tar.gz $OUTDIR
+tar cfvz output.tar.gz output
 
 #############################
 
