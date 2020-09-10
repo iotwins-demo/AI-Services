@@ -338,11 +338,11 @@ def split_data_noLabel(df_fname, ratio = 0.7):
     df_train, df_test, df_val = _split_data_noLabel(df)
     # save the results 
     df_fname_train = '{}/{}_train.csv'.format(out_dir, df_fname.split('.')[0])
-    df_train.to_csv(df_fname_train)
+    serialize_py_obj(df_train, df_fname_train)
     df_fname_test = '{}/{}_test.csv'.format(out_dir, df_fname.split('.')[0])
-    df_test.to_csv(df_fname_test)
+    serialize_py_obj(df_test, df_fname_test)
     df_fname_val = '{}/{}_val.csv'.format(out_dir, df_fname.split('.')[0])
-    df_val.to_csv(df_fname_val)
+    serialize_py_obj(df_val, df_fname_val)
     return df_train, df_test, df_val
 
 def split_data_withLabel(df_fname, y, ratio = 0.7):
@@ -370,11 +370,11 @@ def split_data_withLabel(df_fname, y, ratio = 0.7):
             df, y, ratio)
     # save the results 
     df_fname_train = '{}/{}_train.csv'.format(out_dir, df_fname.split('.')[0])
-    df_train.to_csv(df_fname_train)
+    serialize_py_obj(df_train, df_fname_train)
     df_fname_test = '{}/{}_test.csv'.format(out_dir, df_fname.split('.')[0])
-    df_test.to_csv(df_fname_test)
+    serialize_py_obj(df_test, df_fname_test)
     df_fname_val = '{}/{}_val.csv'.format(out_dir, df_fname.split('.')[0])
-    df_val.to_csv(df_fname_val)
+    serialize_py_obj(df_val, df_fname_val)
     y_train_fname = '{}/{}_y_train.pickle'.format(out_dir, 
             df_fname.split('.')[0])
     serialize_py_obj(y_train, y_train_fname)
