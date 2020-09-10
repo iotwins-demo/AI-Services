@@ -18,6 +18,9 @@ case $APPLICATION in
     ;;
 esac
 
+# move in the working dir
+cd $WORKDIR
+
 #download input from Swift
 echo Downloading input file
 swift download INPUT --prefix $JOB_UUID || exit 23
