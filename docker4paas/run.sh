@@ -25,7 +25,7 @@ cd $WORKDIR
 echo Downloading input file
 swift download INPUT --prefix $JOB_UUID || exit 23
 
-export INPUTDIR=$WORKDIR/INPUT/$JOB_UUID
+export INPUTDIR=$WORKDIR/$JOB_UUID
 export OUTDIR=$WORKDIR/output
 
 mkdir -p $OUTDIR
